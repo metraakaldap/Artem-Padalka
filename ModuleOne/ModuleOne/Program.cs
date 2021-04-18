@@ -33,11 +33,10 @@ namespace ModuleOne
                 }
             }
 
-            Console.WriteLine(countOdd);
-            Console.WriteLine(countEven);
-
+            // Console.WriteLine(countOdd);
+            // Console.WriteLine(countEven);
             int[] evenArr = new int[countEven]; // заполняем чётными
-            int[] oddArr = new int[countOdd]; 
+            int[] oddArr = new int[countOdd];
 
             // for (int i = 0; i < vs.Length; i++)
             // {
@@ -51,32 +50,33 @@ namespace ModuleOne
             //        }
             //    }
             // }
-            for (int i = 0; i < vs.Length; i++)
+            for (int i = 0, k = 0, j = 0; i < vs.Length; i++)
             {
                 if (vs[i] % 2 == 0)
                 {
-                    evenArr[i] = vs[i];
+                    evenArr[k] = vs[i];
+                    k++;
                 }
 
                 if (vs[i] % 2 != 0)
                 {
-                    oddArr[i] = vs[i];
+                    oddArr[j] = vs[i];
+                    j++;
                 }
             }
 
-            for (int i = 0; i < vs.Length; i++)
-            {
-                int j = 0;
-                while (j < oddArr.Length)
-                {
-                    if (vs[i] % 2 != 0)
-                    {
-                        oddArr[j] = vs[i];
-                        j++;
-                    }
-                }
-            }
-
+            // for (int i = 0; i < vs.Length; i++)
+            // {
+            //    int j = 0;
+            //    while (j < oddArr.Length)
+            //    {
+            //        if (vs[i] % 2 != 0)
+            //        {
+            //            oddArr[j] = vs[i];
+            //            j++;
+            //        }
+            //    }
+            // }
             string[] alp = { "A", "b", "c", "D", "E", "f", "g", "H", "I", "J", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
 
             int[] nums = new int[26];
@@ -108,6 +108,7 @@ namespace ModuleOne
                 Console.Write(resEven[i] + " ");
             }
 
+            Console.WriteLine(" ");
             string[] resOdd = NumbersToLetters(oddArr);
             for (int i = 0; i < resOdd.Length; i++)
             {
