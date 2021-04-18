@@ -95,7 +95,7 @@ namespace ModuleOne
             string[] resOdd = NumbersToLetters(oddArr);
             for (int i = 0; i < resOdd.Length; i++)
             {
-                Console.Write(resOdd[i] + " ");
+                Console.Write(resOdd[i] + " " );
             }
         }
     }
