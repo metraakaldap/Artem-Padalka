@@ -60,6 +60,43 @@ namespace ModuleOne
                     }
                 }
             }
+
+            string[] alp = { "A", "b", "c", "D", "E", "f", "g", "H", "I", "J", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+
+            int[] nums = new int[26];
+            for (int i = 1; i <= 26; i++)
+            {
+                nums[i - 1] = i;
+            }
+
+            string[] NumbersToLetters(int[] arr)
+            {
+                string[] res = new string[arr.Length];
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    for (int j = 0; j < nums.Length; j++)
+                    {
+                        if (arr[i] == nums[j])
+                        {
+                            res[i] = alp[j];
+                        }
+                    }
+                }
+
+                return res;
+            }
+
+            string[] resEven = NumbersToLetters(evenArr);
+            for (int i = 0; i < resEven.Length; i++)
+            {
+                Console.Write(resEven[i] + " ");
+            }
+
+            string[] resOdd = NumbersToLetters(oddArr);
+            for (int i = 0; i < resOdd.Length; i++)
+            {
+                Console.Write(resOdd[i] + " ");
+            }
         }
     }
 }
