@@ -33,6 +33,9 @@ namespace ModuleOne
                 }
             }
 
+            Console.WriteLine(countOdd);
+            Console.WriteLine(countEven);
+
             int[] evenArr = new int[countEven]; // заполняем чётными
             for (int i = 0; i < vs.Length; i++)
             {
@@ -41,7 +44,7 @@ namespace ModuleOne
                 {
                     if (vs[i] % 2 == 0)
                     {
-                        vs[i] = evenArr[j];
+                        evenArr[j] = vs[i];
                         j++;
                     }
                 }
@@ -55,7 +58,7 @@ namespace ModuleOne
                 {
                     if (vs[i] % 2 != 0)
                     {
-                        vs[i] = oddArr[j];
+                        oddArr[j] = vs[i];
                         j++;
                     }
                 }
@@ -95,7 +98,7 @@ namespace ModuleOne
             string[] resOdd = NumbersToLetters(oddArr);
             for (int i = 0; i < resOdd.Length; i++)
             {
-                Console.Write(resOdd[i] + " " );
+                Console.Write(resOdd[i] + " ");
             }
         }
     }
