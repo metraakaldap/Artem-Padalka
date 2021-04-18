@@ -15,8 +15,8 @@ namespace ModuleOne
         private static void Main(string[] args)
 #pragma warning restore SA1614 // Element parameter documentation should have text
         {
-            int count1 = 0;
-            int count = 0;
+            int countEven = 0;
+            int countOdd = 0;
             int n = Convert.ToInt32(Console.ReadLine());
             int[] vs = new int[n];
             for (int i = 0; i < vs.Length; i++)
@@ -24,25 +24,42 @@ namespace ModuleOne
                 vs[i] = new Random().Next(1, 26);
                 if (vs[i] % 2 == 0)
                 {
-                    count++;
+                    countEven++;
                 }
 
                 if (vs[i] % 2 != 0)
                 {
-                    count1++;
+                    countOdd++;
                 }
             }
 
-            int[] evenArr = new int[count];
-            for (int i = 0; i < evenArr.Length; i++)
+            int[] evenArr = new int[countEven]; // заполняем чётными
+            for (int i = 0; i < vs.Length; i++)
             {
-                if (vs[i] % 2 == 0)
+                int j = 0;
+                while (j < evenArr.Length)
                 {
-                    count++;
+                    if (vs[i] % 2 == 0)
+                    {
+                        vs[i] = evenArr[j];
+                        j++;
+                    }
                 }
             }
 
-            int[] oddArr = new int[count1];
+            int[] oddArr = new int[countOdd]; // заполняем нечётными
+            for (int i = 0; i < vs.Length; i++)
+            {
+                int j = 0;
+                while (j < oddArr.Length)
+                {
+                    if (vs[i] % 2 != 0)
+                    {
+                        vs[i] = oddArr[j];
+                        j++;
+                    }
+                }
+            }
         }
     }
 }
