@@ -37,20 +37,33 @@ namespace ModuleOne
             Console.WriteLine(countEven);
 
             int[] evenArr = new int[countEven]; // заполняем чётными
+            int[] oddArr = new int[countOdd]; 
+
+            // for (int i = 0; i < vs.Length; i++)
+            // {
+            //    int j = 0;
+            //    while (j < evenArr.Length)
+            //    {
+            //        if (vs[i] % 2 == 0)
+            //        {
+            //            evenArr[j] = vs[i];
+            //            j++;
+            //        }
+            //    }
+            // }
             for (int i = 0; i < vs.Length; i++)
             {
-                int j = 0;
-                while (j < evenArr.Length)
+                if (vs[i] % 2 == 0)
                 {
-                    if (vs[i] % 2 == 0)
-                    {
-                        evenArr[j] = vs[i];
-                        j++;
-                    }
+                    evenArr[i] = vs[i];
+                }
+
+                if (vs[i] % 2 != 0)
+                {
+                    oddArr[i] = vs[i];
                 }
             }
 
-            int[] oddArr = new int[countOdd]; // заполняем нечётными
             for (int i = 0; i < vs.Length; i++)
             {
                 int j = 0;
