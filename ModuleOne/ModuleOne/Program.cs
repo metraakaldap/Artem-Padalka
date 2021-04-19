@@ -103,13 +103,48 @@ namespace ModuleOne
             }
 
             string[] resEven = NumbersToLetters(evenArr);
+            string[] resOdd = NumbersToLetters(oddArr);
+            string[] letters = { "A", "D", "E", "H", "I", "J" };
+            int countEvenNew = 0;
+            int countOddNew = 0;
+            for (int i = 0; i < resEven.Length; i++)
+            {
+                for (int j = 0; j < letters.Length; j++)
+                {
+                    if (resEven[i] == letters[j])
+                    {
+                        countEvenNew++;
+                    }
+                }
+            }
+
+            for (int i = 0; i < resOdd.Length; i++)
+            {
+                for (int j = 0; j < letters.Length; j++)
+                {
+                    if (resOdd[i] == letters[j])
+                    {
+                        countOddNew++;
+                    }
+                }
+            }
+
+            if (countEvenNew > countOddNew)
+            {
+                Console.WriteLine("В чётном массиве больше искомых букв");
+            }
+            else
+            {
+                Console.WriteLine("В нечётном массиве больше искомых букв");
+            }
+
             for (int i = 0; i < resEven.Length; i++)
             {
                 Console.Write(resEven[i] + " ");
             }
 
             Console.WriteLine(" ");
-            string[] resOdd = NumbersToLetters(oddArr);
+
             for (int i = 0; i < resOdd.Length; i++)
             {
                 Console.Write(resOdd[i] + " ");
